@@ -1,10 +1,23 @@
-import array as arr
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def add(self, value):
+        self.items.append(value)
+    
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Pop from empty stack")
+        
+        return self.stk.pop()
+        
+    def peek(self):
+        return self.items[-1]
 
-arr1 = arr.array("I", [1,2,3,4,5])
-arr2 = arr.array("u", ["a", "b", "c"])
-print(arr1)
-for el in arr1:
-    print(el)
-
-for ch in arr2:
-    print(ch, end=" ")
+stk = Stack()
+stk.add(10)
+stk.add(20)
+print(stk)
