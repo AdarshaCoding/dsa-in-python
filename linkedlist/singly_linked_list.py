@@ -1,24 +1,56 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data) -> None:
         self.data = data
         self.next = None
 
 
-a = Node(10)
-b = Node(20)
-c = Node(30)
+class SinglyLinkedList:
+    def __init__(self) -> None:
+        self.head = None
 
-print(f"a: {id(a)}, b: {id(b)}, c: {id(c)}")
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            return
+        new_node.next = self.head
+        self.head = new_node
 
-a.next = b
-b.next = c
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next != None:
+            current = current.next
+        current.next = new_node
 
-print(f"a -> b : {id(a.next)}")
-print(f"b -> c : {id(b.next)}")
-print(f"c -> {c.next}")
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
 
-# Output
-# a: 2159175951872, b: 2159175951920, c: 2159175952016
-# a -> b : 2159175951920
-# b -> c : 2159175952016
-# c -> None
+    def reverse_list(self):
+        prev = None
+        current = self.head
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+        self.head = prev
+
+
+ll = SinglyLinkedList()
+ll.insert_at_end(10)
+ll.insert_at_end(20)
+ll.insert_at_end(30)
+ll.insert_at_end(40)
+ll.insert_at_beginning(66)
+
+ll.print_list()
+ll.reverse_list()
+ll.print_list()
