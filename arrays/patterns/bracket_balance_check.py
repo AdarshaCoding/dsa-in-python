@@ -2,6 +2,10 @@ s = "[{]([])}]"
 bracket_map = {")": "(", "}": "{", "]": "["}
 stk = []
 
+# Used stack DS and dictionary
+# Keep adding to stack if any opening bracket found in map.values()
+# Pop the element from stack if any closed bracket found and only if the closed bracket maches with openning bracket else retun False
+
 
 def is_balanced(s):
     for ch in s:
