@@ -85,7 +85,21 @@ class SinglyLinkedList:
     def delete_by_value(self, value):
         if self.head is None:
             return "List is empty!"
+        if self.head.data == value:
+            self.head = self.head.next
+            return
+
         current = self.head
+        while current.next != None:
+            if current.next.data == value:
+                break
+            current = current.next
+
+        if current is None:
+            print("Enter value is not correct")
+            return
+        current.next = current.next.next
+        self.n = self.n - 1
 
 
 ll = SinglyLinkedList()
@@ -102,3 +116,23 @@ ll.print_list()
 
 print("Position: " + str(ll.search(40)))
 print(len(ll))
+ll.delete_by_value(40)
+ll.print_list()
+print(len(ll))
+
+# Beginner Problems:
+# Create a Linked List:
+
+# Write a function to create a linked list from a list of elements.
+# Display Linked List:
+
+# Implement a function to traverse and print all elements in the linked list.
+# Search an Element:
+
+# Write a function to search for an element in a linked list and return its position (or None if not found).
+# Count Nodes:
+
+# Write a function to count the number of nodes in a linked list.
+# Delete a Node:
+
+# Implement a function to delete a node by value in a linked list.
