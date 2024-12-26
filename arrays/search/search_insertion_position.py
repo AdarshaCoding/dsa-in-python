@@ -1,19 +1,17 @@
-arr = [1, 2, 3, 4, 5, 6, 7]
-
-
-def binary_search(arr, target):
+def search_insertion_position(arr, target):
     left = 0
     right = len(arr) - 1
     while left <= right:
         mid = (left + right) // 2
         if arr[mid] == target:
-            return True
+            return mid
         elif arr[mid] < target:
             left = mid + 1
         else:
             right = mid - 1
-    return False
+    return left
 
 
-target = int(input("Enter the value to search: "))
-print(binary_search(arr, target))
+arr = [1, 3, 6, 7, 9]
+target = 8
+print(search_insertion_position(arr, target))
