@@ -1,15 +1,14 @@
-arr = [2, 7, 11, 15]
-target = 17
+arr = [2, 7, 1, 5, 20, 16, 11, 15]
+target = 25
 
 
 def two_sum_problem(arr, target):
-    hash_map = {}
+    hashmap = {}
     for i, el in enumerate(arr):
-        difference = target - el
-        if difference in hash_map:
-            return [hash_map[difference], i]
-
-        hash_map[el] = i
+        diff = target - el
+        if diff in hashmap:
+            return [hashmap[diff], i]
+        hashmap[el] = i
     return []
 
 
