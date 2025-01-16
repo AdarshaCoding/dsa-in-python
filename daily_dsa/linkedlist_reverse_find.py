@@ -1,3 +1,8 @@
+# Day_1 - 15/01/2025
+# 1. Reverse a linked list.
+# 2. Find the middle element of a linked list.
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -8,6 +13,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    # Insert at the beginning
     def insert_at_beginning(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -16,6 +22,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    # Print all the node
     def print_list(self):
         current = self.head
         while current:
@@ -23,6 +30,7 @@ class LinkedList:
             current = current.next
         print("None")
 
+    # Reverse the linked list
     def reverse(self):
         current = self.head
         prev = None
@@ -47,6 +55,7 @@ class LinkedList:
     # prev = 60--> 70--> None
     # current = 50 -> 40 -> 30 -> 20 -> 10 -> None
 
+    # find the middle element in the list
     def find_middle_element(self):
         if self.head is None:
             print("The list is empty")
