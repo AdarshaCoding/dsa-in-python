@@ -1,3 +1,4 @@
+# Using the set
 # def remove_duplicate(arr):
 #     unique_set = set()
 #     for el in arr:
@@ -5,6 +6,7 @@
 #     return len(unique_set)
 
 
+# Using two pointer technique
 def remove_duplicate(arr):
     i = 0
     for j in range(1, len(arr)):
