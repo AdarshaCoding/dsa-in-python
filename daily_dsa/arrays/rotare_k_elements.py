@@ -6,4 +6,4 @@ def rotate(arr, k):
 
 
 arr = [1, 2, 3, 4, 5, 6, 10, 67, 89, 45]
-print(rotate(arr, 3))
+print(rotate(arr, 1))
