@@ -1,8 +1,9 @@
 def left_rotate_bye_one(arr):
+    n = len(arr)
     temp = arr[0]
-    for i in range(1, len(arr)):
+    for i in range(1, n):
         arr[i - 1] = arr[i]
-    arr[len(arr) - 1] = temp
+    arr[n - 1] = temp
     return arr
 
 
