@@ -71,3 +71,17 @@
     # polynomial or exponential
     2n**30 + 3**n => n**30 + 3**n  => 3**n => O(3**n)  ( 3**n > n**30)
     ```
+
+### Created custome list (MyList)
+
+1. Used **_ctypes_** library
+   a. Referential array will be created using the current_size \* 2 and it is a static array
+
+   ```
+   return (capacity * ctypes.py_object)()
+   ```
+
+   b. Whenever the size of array (size) and elements (n) are equal and trying to append/insert more element then, resize of the array is needed
+
+2. Few magic methods are used like **len**, **str**, **delitem** and **getitem**
+3. Complete details are in list_create.py
