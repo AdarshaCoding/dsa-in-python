@@ -5,4 +5,4 @@ def sum(x):
     return total_sum
 
 
-print(sum(10))
+print(sum(4))

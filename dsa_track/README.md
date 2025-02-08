@@ -18,6 +18,7 @@
         for i in range(x+1):
             total_sum = total_sum + x
         return total_sum
+    print(sum(4)) #20
     ```
 
     - Different time for differnt algorithm (✔)
