@@ -80,6 +80,9 @@ class SinglyLinkedList:
             print("The list is empty!")
             return
         current = self.head
+        if current.next == None:
+            return self.delete_at_start()
+
         while current.next.next != None:
             current = current.next
 
@@ -90,8 +93,12 @@ class SinglyLinkedList:
         if self.head is None:
             print("The list is empty!")
             return
+        if self.head.data == value:
+            return self.delete_at_start()
+
         current = self.head
-        while current:
+
+        while current.next:
             if current.next.data == value:
                 break
             current = current.next
@@ -100,6 +107,35 @@ class SinglyLinkedList:
         else:
             current.next = current.next.next
             self.n = self.n - 1
+
+    def search_by_value(self, value):
+        if self.head is None:
+            print("The list is empty!")
+            return
+        current = self.head
+        pos = 0
+        while current:
+            if current.data == value:
+                return pos
+            current = current.next
+            pos = pos + 1
+
+    def __getitem__(self, index):
+        # if pos < 0:
+        #     print("Provided position is not correct!")
+        #     return
+        if self.head is None:
+            print("The list is empty!")
+            return
+
+        pos = 0
+        current = self.head
+        while current:
+            if pos == index:
+                return current.data
+            current = current.next
+            pos = pos + 1
+        return "Postion is not valid"
 
     # traverse list
     def print_list(self):
@@ -115,26 +151,34 @@ ll = SinglyLinkedList()
 ll.insert_at_beginning(10)
 ll.insert_at_beginning(30)
 ll.insert_at_beginning(40)
-ll.insert_at_end(100)
-ll.insert_at_end(500)
+ll.insert_at_beginning(50)
+ll.insert_at_beginning(60)
+# ll.insert_at_end(100)
+# ll.insert_at_end(500)
 ll.print_list()
 print(len(ll))
-ll.insert_after(100, 66)
-ll.print_list()
-print(len(ll))
-print("delete start")
-ll.delete_at_start()
-ll.print_list()
-print(len(ll))
-print("Delete at last")
-ll.delete_at_last()
-ll.print_list()
-print(len(ll))
-print("delete by value")
-ll.delete_by_value(100)
-ll.print_list()
-print(len(ll))
-print("clear")
-ll.clear()
-ll.print_list()
-print(len(ll))
+print(ll.search_by_value(10))
+print(ll[0])
+
+# ll.insert_after(100, 66)
+# ll.print_list()
+# print(len(ll))
+# print("delete start")
+# ll.delete_at_start()
+# ll.print_list()
+# print(len(ll))
+# print("Delete at last")
+# ll.delete_at_last()
+# ll.delete_at_last()
+# ll.delete_at_last()
+# ll.delete_at_last()
+# ll.print_list()
+# print(len(ll))
+# print("delete by value")
+# ll.delete_by_value(30)
+# ll.print_list()
+# print(len(ll))
+# print("clear")
+# ll.clear()
+# ll.print_list()
+# print(len(ll))
