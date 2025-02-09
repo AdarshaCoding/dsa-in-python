@@ -63,6 +63,44 @@ class SinglyLinkedList:
             current.next = new_node
             self.n = self.n + 1
 
+    def clear(self):
+        if self.head:
+            self.head = None
+            self.n = 0
+
+    def delete_at_start(self):
+        if self.head is None:
+            print("The list is empty!")
+            return
+        self.head = self.head.next
+        self.n = self.n - 1
+
+    def delete_at_last(self):
+        if self.head is None:
+            print("The list is empty!")
+            return
+        current = self.head
+        while current.next.next != None:
+            current = current.next
+
+        current.next = None
+        self.n = self.n - 1
+
+    def delete_by_value(self, value):
+        if self.head is None:
+            print("The list is empty!")
+            return
+        current = self.head
+        while current:
+            if current.next.data == value:
+                break
+            current = current.next
+        if current is None:
+            print("The target value not found!")
+        else:
+            current.next = current.next.next
+            self.n = self.n - 1
+
     # traverse list
     def print_list(self):
         current = self.head
@@ -82,5 +120,21 @@ ll.insert_at_end(500)
 ll.print_list()
 print(len(ll))
 ll.insert_after(100, 66)
+ll.print_list()
+print(len(ll))
+print("delete start")
+ll.delete_at_start()
+ll.print_list()
+print(len(ll))
+print("Delete at last")
+ll.delete_at_last()
+ll.print_list()
+print(len(ll))
+print("delete by value")
+ll.delete_by_value(100)
+ll.print_list()
+print(len(ll))
+print("clear")
+ll.clear()
 ll.print_list()
 print(len(ll))
