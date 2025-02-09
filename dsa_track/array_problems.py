@@ -57,4 +57,15 @@ def remove_dup_by_adding(arr1, arr2):
     print(unique_arr)
 
 
-remove_dup_by_adding(arr1, arr2)
+# remove_dup_by_adding(arr1, arr2)
+def find_missing_number(arr, n):
+    # n = len(arr) + 1
+    expected_sum = (n * (n + 1)) // 2
+    actual_sum = sum(arr)
+    missing_number = expected_sum - actual_sum
+    print(missing_number)
+
+
+arr = [1, 2, 3, 5, 6]
+n = 6
+find_missing_number(arr, n)
