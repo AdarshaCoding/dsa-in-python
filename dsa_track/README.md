@@ -85,3 +85,41 @@
 
 2. Few magic methods are used like **len**, **str**, **delitem** and **getitem**
 3. Complete details are in list_create.py
+
+### Linked List
+
+1. It is linear data structure used to store any type of data in non continous memory location
+2. It consists of Nodes and connected each other with memory address
+3. Each node contains **_data & pointer_** to next node
+4. First node is called **_head_** and last is called **_tail_** which points to **_None_**
+
+```
+# Node
+-------------
+| data | ---|--> None
+-------------
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+# Linked List
+-------------    -------------     -------------
+| data | ---|--> | data | ----|--> | data | ---|--> None
+-------------    -------------     -------------
+class LinkedList:
+  def __init__(self):
+    self.head = None  # Empty list
+    self.n = 0
+```
+
+**_Different Operations_**
+
+1. Create a Node and List
+2. Insert at the start/beginning
+3. Traverse and print all the nodes
+4. Insert/append at the end
+5. Insert in the middle using the pos/ after any node
+6. Delete at the start/end/using pos/value
+7. Reverse the linked list
+8. Search by value/position
